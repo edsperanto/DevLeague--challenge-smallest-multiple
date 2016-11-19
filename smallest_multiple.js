@@ -11,15 +11,15 @@ module.exports = function( ceiling ) {
   var smallestMultiple = 1;
   var notFound = true;
 
-  while(notFound) {
-    for(var i = 1; i <= ceiling; i++) {
-      if(smallestMultiple % i !== 0) {
-        i = 1;
-        smallestMultiple++;
+  while(notFound) { // check if it is smallest multiple
+    for(var i = 1; i <= ceiling; i++) { // loop through numbers from 1 to "ceiling" to check
+      if(smallestMultiple % i !== 0) { // if not a multiple of any one of the numbers
+        i = 1; // reset loop
+        smallestMultiple++; // check next number
       }
     }
-    notFound = false;
+    notFound = false; // if for loop is finished, smallest multiple is found
   }
 
-  return smallestMultiple;
+  return smallestMultiple; // return smallest multiple
 };
