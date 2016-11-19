@@ -8,7 +8,18 @@
  */
 module.exports = function( ceiling ) {
   // do work here
+  var smallestMultiple = 1;
+  var notFound = true;
 
+  while(notFound) {
+    for(var i = 1; i <= ceiling; i++) {
+      if(smallestMultiple % i !== 0) {
+        i = 1;
+        smallestMultiple++;
+      }
+    }
+    notFound = false;
+  }
 
-  return 0;
+  return smallestMultiple;
 };
